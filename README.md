@@ -44,13 +44,13 @@ https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.1.0/zephyr/services/devic
 
 nRF Connect SDK sử dụng base trên Zephyr sử dụng library [mcumgr](https://github.com/nrfconnect/sdk-mcumgr) để quản lý `image` và `os`, ...
 
-**Về `image` management:**
+**`image` management:**
 - images state: danh sách image, trạng thái từng image (active, confirm/test, bootable, ...), set trạng thái cho image
 - image upload: ghi image vào device
 - image erase
 - ...
 
-**Về `os` management:**
+**`os` management:**
 - soft reset: reset mcu
 - ...
 
@@ -82,9 +82,9 @@ https://github.com/NordicSemiconductor/Flutter-nRF-Connect-Device-Manager
 
 #### ~Flutter package cũ~
 
-https://github.com/NordicSemiconductor/IOS-DFU-Library
+~https://github.com/NordicSemiconductor/IOS-DFU-Library~
 
-https://github.com/NordicSemiconductor/Android-DFU-Library
+~https://github.com/NordicSemiconductor/Android-DFU-Library~
 
 ~Các package DFU là package cũ, chỉ dùng cho SoftDevice (sdk trước nRF Connect SDK).~
 
