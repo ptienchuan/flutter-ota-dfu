@@ -36,11 +36,56 @@ _Hiện tại sau khi upgrade firmware xong mà chưa tắt app, bấm tiếp n�
 
 ## Document
 
+https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.1.0/zephyr/services/device_mgmt/index.html
+
 ### Cơ chế hoạt động
 
-mcumgr
-SMP protocol
-SMP Service
-iOS package
-Android package
-Flutter package
+#### mcumgr
+
+nRF Connect SDK sử dụng base trên Zephyr sử dụng library [mcumgr](https://github.com/nrfconnect/sdk-mcumgr) để quản lý `image` và `os`, ...
+
+**Về `image` management:**
+- images state: danh sách image, trạng thái từng image (active, confirm/test, bootable, ...), set trạng thái cho image
+- image upload: ghi image vào device
+- image erase
+- ...
+
+**Về `os` management:**
+- soft reset: reset mcu
+- ...
+
+Để ghi image vào deivce, mcumgr sử dụng [SMP Protocol](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.1.0/zephyr/services/device_mgmt/smp_protocol.html) thông qua BLE hoặc Shell.
+
+Điều khiển mcumgr bằng cách gửi qua SMP Protocol:
+- group_command (image / os / ...)
+- command (images state / soft reset / ...)
+- data (nếu có)
+
+#### SMP Service
+
+Để transfer data qua SMP Protocol sử dụng BLE thì cần sử dụng [SMP Service](https://docs.zephyrproject.org/latest/services/device_mgmt/smp_transport.html#ble-bluetooth-low-energy)
+
+Mô tả frame để gửi 1 gói tin: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.1.0/zephyr/services/device_mgmt/smp_protocol.html
+
+### Package
+#### iOS package
+
+https://github.com/NordicSemiconductor/IOS-nRF-Connect-Device-Manager
+
+#### Android package
+
+https://github.com/NordicSemiconductor/Android-nRF-Connect-Device-Manager
+
+#### Flutter package (beta)
+
+https://github.com/NordicSemiconductor/Flutter-nRF-Connect-Device-Manager
+
+#### ~Flutter package cũ~
+
+https://github.com/NordicSemiconductor/IOS-DFU-Library
+
+https://github.com/NordicSemiconductor/Android-DFU-Library
+
+~Các package DFU là package cũ, chỉ dùng cho SoftDevice (sdk trước nRF Connect SDK).~
+
+Đối với nRF Connect SDK phải sử dụng `mcumgr`
