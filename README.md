@@ -1,6 +1,8 @@
 # Flutter OTA DFU
+
 Demo upgrade nRF52832 firmware through BLE on Flutter
-// TODO: link device demo
+
+Source code device: https://github.com/ptienchuan/nrf52832-ota-dfu
 
 ## Setup
 
